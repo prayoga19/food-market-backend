@@ -30,21 +30,27 @@ export class User extends BaseEntity {
 
   @Column({
     type: 'varchar',
+    nullable: false,
+  })
+  password: string;
+
+  @Column({
+    type: 'varchar',
     nullable: true,
   })
   photo: string;
 
   @Column({
-    type: 'integer',
+    type: 'varchar',
     nullable: false,
   })
-  number_phone: number;
+  phone_number: string;
 
   @Column({
     type: 'varchar',
     nullable: false,
   })
-  house_number: number;
+  house_number: string;
 
   @Column({
     type: 'varchar',
@@ -55,6 +61,8 @@ export class User extends BaseEntity {
   @Column({
     type: 'varchar',
     nullable: false,
+    enum: ['admin', 'user'],
+    default: 'user',
   })
   role: string;
 
