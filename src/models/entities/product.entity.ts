@@ -38,7 +38,7 @@ export class Product extends BaseEntity {
     type: 'varchar',
     nullable: false,
   })
-  type: number;
+  type: string;
 
   @Column({
     type: 'text',
